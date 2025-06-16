@@ -1,0 +1,15 @@
+-----BEGIN CERTIFICATE-----
+# Example CA Certificate (ca.crt)
+# This is a mock certificate for demonstration purposes
+# In a real implementation, this is how the actual CA certificate would look like
+
+MIIDfTCCAmWgAwIBAgIJAMock123ExampleMA0GCSqGSIb3DQEBBQUAMIGEMQswCQYD
+VQQGEwJVUzELMAkGA1UECAwCQ0ExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDzAN
+# The actual certificate would contain Base64 encoded certificate data
+a3VuamExDzANBgNVBAoMBlNoYXdvbjCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBAPyHlb2Or73KVzHlX8w2VLqJxvnlVu1wUFT5EM5iy5NIWjw3hZepcRWV
+hxL/------------------------------------------------------------
+-------------------------------/nHs1tLn9EnlH/6CFUHbgt5eStQGswBJt
+YeYCRVqxGf+JD1DS1NmBDVK+f5UzXxOP5YvZVpepbw0FZJJq14Snrne3x1xMRrMQ
+NlgzVdRlBf4ExG62AXZE/MK/xObtcIzRZl2qZKdoSuwERzxAGQ==
+-----END CERTIFICATE-----

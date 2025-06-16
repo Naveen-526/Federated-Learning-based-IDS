@@ -1,0 +1,3 @@
+# Example CA Serial File
+# This would contain a hexadecimal number representing the next certificate serial number
+01  # Example serial number (would be larger in production)

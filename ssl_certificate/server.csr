@@ -1,0 +1,12 @@
+-----BEGIN CERTIFICATE REQUEST-----
+# Example Certificate Signing Request (server.csr)
+# This is a mock CSR for demonstration purposes
+# In a real implementation, this would be generated for dedicated server
+
+MIICrDCCAZQCAQAwZzELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMRYwFAYDVQQH
+DA1TYW4gRnJhbmNpc2NvMRMwEQYDVQQKDApFeGFtcGxlQ28xHjAcBgNVBAMMFWV4
+# The actual CSR would contain Base64 encoded request data
+3WaqENR71Qj+oLTdJY81TyApVf0OC/---------------------------/JK9U44
+PVDnb1c5WB6jCMrtxQLFMrGPKSSfRco089Ep4GjetaJgJ+AIkhZLqkcfhDRCQT15
+zUQuvqJOSiFu0iNNufBZqaIIOaq5KSU=
+-----END CERTIFICATE REQUEST-----
