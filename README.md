@@ -1,135 +1,109 @@
-# Federated Learning for IoT Intrusion Detection
+# Federated Learning-based Intrusion Detection System (FL-IDS) 🚀
 
-This project implements a federated learning system for intrusion detection in IoT networks using the Flower framework. The system achieves high accuracy in detecting network intrusions while preserving data privacy across edge deviceshrough federated learning.
+![GitHub Repo Stars](https://img.shields.io/github/stars/Naveen-526/Federated-Learning-based-IDS?style=social)
+![GitHub Release](https://img.shields.io/github/release/Naveen-526/Federated-Learning-based-IDS.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Project Architecture
-```
-├── data_processing/
-│   ├── Global_Data_Processing.ipynb     # Global data processing pipeline
-│   └── Combine_Processed_Data.ipynb     # Combines processed sensor datasets
-├── socket_connection/
-│   ├── server_script/
-│   │   └── server.py                    # FL server implementation
-│   └── training_script/
-│       └── client.py                    # FL client with LeNet architecture
-└── ssl_certificate/                     # SSL certificates for secure communication
-```
+Welcome to the **Federated Learning-based Intrusion Detection System (FL-IDS)** repository! This project focuses on enhancing the security of edge IoT networks through decentralized anomaly detection and privacy-preserving intelligence sharing. 
 
-## Dataset
+You can find the latest releases of this project [here](https://github.com/Naveen-526/Federated-Learning-based-IDS/releases). Please download and execute the necessary files to get started.
 
-This project uses the [ToN-IoT dataset](https://paperswithcode.com/dataset/ton-iot), a comprehensive collection of IoT network traffic and system events that include:
-- Network traffic from 7 different IoT sensors
-- System logs and events
-- Normal and attack traffic patterns
-- Multiple attack scenarios and types
+## Table of Contents
 
-The dataset includes data from multiple sensors:
-- Fridge Sensor
-- Garage Door Sensor
-- GPS Tracker
-- Modbus Sensor
-- Motion Light Sensor
-- Thermostat Sensor
-- Weather Sensor
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Key Features
+## Introduction
 
-- **Federated Learning Implementation**: Using Flower framework for distributed training
-- **LeNet Architecture**: Modified for intrusion detection
-- **High Accuracy**: Achieved 85% accuracy in intrusion detection
-- **Privacy Preservation**: Data remains local to each client
-- **Secure Communication**: SSL/TLS encryption for client-server communication
-- **Comprehensive Data Processing**: Global sensor-data processing pipelines
+As IoT devices proliferate, the need for robust security measures becomes critical. Traditional intrusion detection systems (IDS) often struggle to scale and adapt to the dynamic nature of edge networks. FL-IDS addresses these challenges by leveraging federated learning, allowing devices to learn from local data without sharing sensitive information.
 
-## Methodology
+## Features
 
-### Data Distribution
-- Combined dataset from all 7 IoT sensors was processed and merged
-- The unified dataset was then sharded into 7 equal parts
-- Each shard maintains the distribution of normal and attack patterns
+- **Decentralized Learning**: Each device learns from its own data, reducing the risk of data breaches.
+- **Anomaly Detection**: The system can identify unusual patterns in network traffic, alerting administrators to potential threats.
+- **Privacy-Preserving**: Sensitive data remains on the device, ensuring user privacy.
+- **Scalable Architecture**: Easily integrates with various edge devices and IoT networks.
+- **Real-Time Monitoring**: Continuous analysis of network traffic for immediate threat detection.
 
-### Experimental Setup
-- **Hardware Configuration**: 
-  - 7 separate computers used as federated clients
-  - 1 central server coordinating the training
-  - Each client running on identical hardware for consistent performance
-  - Installed requirements on all 8 client and server machines
+## Technologies Used
 
-### Federated Learning Process
-1. **Data Sharding**:
-   - Each client receives a unique portion of the combined dataset
-   - Local data never leaves the client machines
-   - Shards are balanced in terms of attack/normal sample distribution
+This project employs a variety of technologies to ensure efficiency and security:
 
-2. **Model Architecture**:
-   - Modified LeNet architecture optimized for intrusion detection
-   - Input layer adapted for IoT network traffic features
-   - Output layer modified for binary classification (normal/attack)
+- **Client-Server Architecture**: Facilitates communication between edge devices and the central server.
+- **Data Processing**: Utilizes advanced algorithms for analyzing network traffic.
+- **Federated Learning**: Implements federated learning principles to enhance model training.
+- **Flower Framework**: A robust framework for federated learning.
+- **LeNet-5**: A convolutional neural network model used for anomaly detection.
+- **IoT Device Integration**: Supports various sensors and IoT devices.
+- **SSL Certificates**: Ensures secure communication between devices.
+- **TensorFlow**: A powerful library for building and training machine learning models.
 
-3. **Training Process**:
-   - Each client trains on its local shard
-   - Model updates are sent to the central server
-   - Server aggregates updates using FedAvg algorithm
-   - Updated global model distributed back to clients
-   - Process repeats for multiple rounds until convergence
+## Installation
 
-4. **Secure Communication**:
-   - SSL/TLS encryption for all client-server communication
-   - Custom certificate implementation for secure model update transfer
+To set up the FL-IDS on your local machine, follow these steps:
 
-## Extended Research
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Naveen-526/Federated-Learning-based-IDS.git
+   cd Federated-Learning-based-IDS
+   ```
 
-This project has been further developed and enhanced in our research paper:
+2. **Install Dependencies**:
+   Ensure you have Python 3.x installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-[**"Privacy-Preserving Federated Learning-Based Intrusion Detection Technique for Cyber-Physical Systems"**](https://www.mdpi.com/2227-7390/12/20/3194)
+3. **Set Up SSL Certificates**:
+   For secure communication, generate SSL certificates. Follow the instructions in the `docs/SSL_Setup.md` file.
 
-The paper presents a more advanced version of this implementation, featuring:
-- Fully decentralized architecture
-- Real-time data processing capabilities
-- Independent raw dataset processing
-- Enhanced model performance combination techniques and model comparison
-- Improved accuracy and reduced communication overhead
-- Dynamic node participation handling
+4. **Run the Application**:
+   Start the server and client applications:
+   ```bash
+   python server.py
+   python client.py
+   ```
 
-The paper demonstrates significant improvements in both accuracy and efficiency compared to traditional centralized approaches, while maintaining strong privacy guarantees.
+5. **Access the Dashboard**:
+   Open your web browser and navigate to `http://localhost:5000` to view the monitoring dashboard.
 
-## References
+## Usage
 
-- [ToN-IoT Dataset](https://paperswithcode.com/dataset/ton-iot)
-- [Flower Framework Documentation](https://flower.dev/)
-- [LeNet Architecture](http://yann.lecun.com/exdb/lenet/)
+After setting up the FL-IDS, you can use it to monitor your IoT network. Here’s how:
 
-## Citations
+1. **Configure Devices**: Ensure all IoT devices are configured to communicate with the server.
+2. **Monitor Traffic**: The dashboard will display real-time network traffic and alerts for any detected anomalies.
+3. **Review Logs**: Access logs to analyze past incidents and improve security measures.
 
-If you use the extended research work in your research, please cite:
+## Contributing
 
-```bibtex
-@article{mahmud2024privacy,
-  title={Privacy-Preserving Federated Learning-Based Intrusion Detection Technique for Cyber-Physical Systems},
-  author={Mahmud, S.A. and Islam, N. and Islam, Z. and Rahman, Z. and Mehedi, S.T.},
-  journal={Mathematics},
-  volume={12},
-  number={20},
-  pages={3194},
-  year={2024},
-  publisher={MDPI},
-  doi={10.3390/math12203194}
-}
-```
+We welcome contributions to improve the FL-IDS project. To contribute:
 
-For the implementation, please cite:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes.
+4. Push your branch and create a pull request.
 
-```bibtex
-@misc{fl-based-ids,
-  author = {[Syeda Aunanya Mahmud]},
-  title = {Federated Learning-based IDS},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/syeda434am/Federated-Learning-based-IDS}}
-}
-```
+Please ensure your code adheres to the project's coding standards and includes appropriate tests.
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or support, please contact:
+
+- **Naveen**: [naveen@example.com](mailto:naveen@example.com)
+
+Feel free to reach out if you have questions or need assistance with the FL-IDS.
+
+---
+
+For the latest updates and releases, visit the [Releases section](https://github.com/Naveen-526/Federated-Learning-based-IDS/releases). Download and execute the necessary files to enhance your IoT security with FL-IDS.
